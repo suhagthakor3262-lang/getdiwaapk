@@ -34,19 +34,49 @@
   </script>
 </head>
 <body>
+  <!-- HEADER -->
   <header>
     <div class="container nav">
       <a href="index.html" class="logo">GETDIWAAPK</a>
       
       <div class="nav-right">
         <button class="search-btn" onclick="openSearch()" aria-label="Search games">🔍</button>
-        <a href="https://t.me/blackytinvit" target="_blank" rel="noopener" class="telegram-btn">✈️ Telegram</a>
-        <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')" aria-label="Menu">☰</button>
+        <!-- 3-Line Menu Button -->
+        <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Open Menu">☰</button>
       </div>
     </div>
   </header>
 
-  <!-- Search Overlay -->
+  <!-- SIDEBAR MENU DRAWER (Legal & Navigation Links) -->
+  <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+  <aside class="sidebar-menu" id="sidebarMenu">
+    <div class="sidebar-header">
+      <span class="sidebar-title">Menu</span>
+      <button class="close-sidebar-btn" onclick="toggleMenu()" aria-label="Close Menu">&times;</button>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="menu-group">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">🏠 Home</a></li>
+          <li><a href="about.html">🧑‍🔧 About Us</a></li>
+          <li><a href="blog.html">📰 Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="menu-group">
+        <h4>Legal & Policies</h4>
+        <ul>
+          <li><a href="privacy.html">🔒 Privacy Policy</a></li>
+          <li><a href="terms.html">📄 Terms & Conditions</a></li>
+          <li><a href="disclaimer.html">⚠️ Disclaimer</a></li>
+          <li><a href="responsible-gaming.html">🎯 Responsible Gaming (18+)</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- SEARCH OVERLAY -->
   <div class="search-overlay" id="searchOverlay">
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="Search Diwa games..." oninput="searchGames()" autofocus>
@@ -56,114 +86,13 @@
   </div>
 
   <main>
-    <!-- HERO -->
+    <!-- HERO SECTION -->
     <section class="hero">
       <div class="container">
         <h1>Download Premium <span>Diwa Games</span> APK</h1>
-        <p>Official source for Diwa King, Diwa Play, Diwa Ace & Diwa Lucky. Get the latest safe APK versions through our verified Telegram channel. Fast updates • Secure • 18+ only.</p>
+        <p>Official source for Diwa King, Diwa Play, Diwa Ace & Diwa Lucky. Get the latest safe APK versions through our verified channel. Fast updates • Secure • 18+ only.</p>
         <div class="hero-buttons">
           <a href="https://t.me/blackytinvit" target="_blank" rel="noopener" class="btn-primary">Get Latest APK Now</a>
-          <a href="#new-games" class="btn-secondary">Explore Games</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION TABS (ek line) -->
-    <div class="container">
-      <div class="section-tabs">
-        <a href="#new-games" class="active">🔥 New Games</a>
-        <a href="#high-bonus">💰 High Bonus</a>
-        <a href="#upcoming">🚀 Upcoming</a>
-      </div>
-    </div>
-
-    <!-- NEW GAMES -->
-    <section class="games-section" id="new-games">
-      <div class="container">
-        <div class="section-header">
-          <h2>🔥 <span>New Games</span></h2>
-        </div>
-        <div class="compact-grid" id="newGamesGrid">
-          <div class="compact-card" data-name="diwa king">
-            <span class="badge">NEW</span>
-            <img src="https://i.ibb.co/fGFGwL4q/compressed-image-1.jpg" alt="Diwa King APK" width="200" height="130" loading="lazy">
-            <div class="compact-card-body">
-              <h3>Diwa King</h3>
-              <p>Premium multiplayer + VIP rewards</p>
-              <a href="diwa-king.html" class="btn-card">Details →</a>
-            </div>
-          </div>
-          <div class="compact-card" data-name="diwa play">
-            <span class="badge">NEW</span>
-            <img src="https://i.ibb.co/Xk4216vR/IMG-20260911-100324-048.jpg" alt="Diwa Play APK" width="200" height="130" loading="lazy">
-            <div class="compact-card-body">
-              <h3>Diwa Play</h3>
-              <p>Daily bonuses & free spins</p>
-              <a href="diwa-play.html" class="btn-card">Details →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="container"><div class="section-divider"></div></div>
-
-    <!-- HIGH BONUS -->
-    <section class="games-section" id="high-bonus">
-      <div class="container">
-        <div class="section-header">
-          <h2>💰 <span>High Bonus Games</span></h2>
-        </div>
-        <div class="compact-grid">
-          <div class="compact-card" data-name="diwa ace">
-            <span class="badge bonus">HIGH BONUS</span>
-            <img src="https://i.ibb.co/p64hLjvy/Diwa-Ace.png" alt="Diwa Ace APK" width="200" height="130" loading="lazy">
-            <div class="compact-card-body">
-              <h3>Diwa Ace</h3>
-              <p>Secure & high payout games</p>
-              <a href="diwa-ace.html" class="btn-card">Details →</a>
-            </div>
-          </div>
-          <div class="compact-card" data-name="diwa lucky">
-            <span class="badge bonus">HIGH BONUS</span>
-            <img src="https://i.ibb.co/4nzYNrx2/IMG-20260919-193730-440.jpg" alt="Diwa Lucky APK" width="200" height="130" loading="lazy">
-            <div class="compact-card-body">
-              <h3>Diwa Lucky</h3>
-              <p>Lucky spins & big rewards</p>
-              <a href="diwa-lucky.html" class="btn-card">Details →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="container"><div class="section-divider"></div></div>
-
-    <!-- UPCOMING -->
-    <section class="games-section" id="upcoming">
-      <div class="container">
-        <div class="section-header">
-          <h2>🚀 <span>Upcoming Games</span></h2>
-        </div>
-        <div class="compact-grid">
-          <div class="compact-card" data-name="coming soon">
-            <span class="badge upcoming">SOON</span>
-            <div style="height:130px;background:linear-gradient(135deg,#1e1e2e,#2a2a3d);display:flex;align-items:center;justify-content:center;font-size:2.2rem;">🎮</div>
-            <div class="compact-card-body">
-              <h3>Coming Soon</h3>
-              <p>New Diwa game launching soon</p>
-              <a href="https://t.me/blackytinvit" target="_blank" class="btn-card">Notify Me</a>
-            </div>
-          </div>
-          <div class="compact-card" data-name="coming soon">
-            <span class="badge upcoming">SOON</span>
-            <div style="height:130px;background:linear-gradient(135deg,#1e1e2e,#2a2a3d);display:flex;align-items:center;justify-content:center;font-size:2.2rem;">🎰</div>
-            <div class="compact-card-body">
-              <h3>Coming Soon</h3>
-              <p>Stay connected on Telegram</p>
-              <a href="https://t.me/blackytinvit" target="_blank" class="btn-card">Notify Me</a>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -178,7 +107,7 @@
           <div class="feature-box">
             <div class="icon">🔒</div>
             <h3>Safe Sources</h3>
-            <p>Only verified Telegram channels for APK files.</p>
+            <p>Only verified APK files with secure downloads.</p>
           </div>
           <div class="feature-box">
             <div class="icon">⚡</div>
@@ -188,7 +117,7 @@
           <div class="feature-box">
             <div class="icon">💬</div>
             <h3>24/7 Support</h3>
-            <p>Direct help through official Telegram.</p>
+            <p>Direct assistance and updates.</p>
           </div>
           <div class="feature-box">
             <div class="icon">🎯</div>
@@ -203,8 +132,8 @@
     <div class="container">
       <div class="cta">
         <h2>Ready to Play?</h2>
-        <p>Join thousands of players. Get the latest Diwa APKs from the official channel.</p>
-        <a href="https://t.me/blackytinvit" target="_blank" rel="noopener" class="btn-primary">Join Telegram Channel</a>
+        <p>Join thousands of players. Get the latest Diwa APKs safely today.</p>
+        <a href="https://t.me/blackytinvit" target="_blank" rel="noopener" class="btn-primary">Download Official APK</a>
       </div>
     </div>
   </main>
@@ -218,19 +147,15 @@
           <p style="color:var(--text-muted);font-size:0.9rem;">Trusted source for Diwa series APK downloads.</p>
         </div>
         <div class="footer-col">
-          <h3>Games</h3>
-          <ul>
-            <li><a href="diwa-king.html">Diwa King</a></li>
-            <li><a href="diwa-play.html">Diwa Play</a></li>
-            <li><a href="diwa-ace.html">Diwa Ace</a></li>
-            <li><a href="diwa-lucky.html">Diwa Lucky</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h3>Important</h3>
+          <h3>Quick Links</h3>
           <ul>
             <li><a href="about.html">About Us</a></li>
             <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Policy</h3>
+          <ul>
             <li><a href="responsible-gaming.html">Responsible Gaming</a></li>
             <li><a href="disclaimer.html">Disclaimer</a></li>
           </ul>
@@ -253,7 +178,15 @@
   <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
   <script>
-    // Search
+    // Sidebar Drawer Toggle Function
+    function toggleMenu() {
+      const menu = document.getElementById('sidebarMenu');
+      const overlay = document.getElementById('menuOverlay');
+      menu.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+
+    // Search Functions
     const gamesData = [
       { name: "Diwa King", img: "https://i.ibb.co/fGFGwL4q/compressed-image-1.jpg", link: "diwa-king.html" },
       { name: "Diwa Play", img: "https://i.ibb.co/Xk4216vR/IMG-20260911-100324-048.jpg", link: "diwa-play.html" },
@@ -277,19 +210,25 @@
       const matched = gamesData.filter(g => g.name.toLowerCase().includes(q));
       results.innerHTML = matched.length ? matched.map(g => `
         <a href="${g.link}" class="search-result-item">
-          <img src="\( {g.img}" alt=" \){g.name}" width="48" height="48">
+          <img src="${g.img}" alt="${g.name}" width="48" height="48">
           <span>${g.name}</span>
         </a>
       `).join('') : '<p style="color:var(--text-muted);padding:10px;">No games found</p>';
     }
 
-    // Back to Top
+    // Back to Top Button
     window.addEventListener('scroll', () => {
       document.getElementById('backToTop').classList.toggle('show', window.scrollY > 400);
     });
 
-    // Close search on Escape
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSearch(); });
+    // Close overlays on Escape key
+    document.addEventListener('keydown', e => { 
+      if (e.key === 'Escape') {
+        closeSearch();
+        const menu = document.getElementById('sidebarMenu');
+        if (menu.classList.contains('active')) toggleMenu();
+      }
+    });
   </script>
 </body>
 </html>
